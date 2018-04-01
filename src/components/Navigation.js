@@ -3,6 +3,14 @@ import React, { Component } from 'react';
 import logo from '../assets/images/mmalogo.png';
 
 class Navigation extends Component {
+  burgerToggle = () => {
+    let linksEl = document.querySelector('.narrowLinks');
+    if (linksEl.style.display === 'block') {
+      linksEl.style.display = 'none';
+    } else {
+      linksEl.style.display = 'block';
+    }
+  };
   render() {
     return (
       <div className="container header">
@@ -10,22 +18,38 @@ class Navigation extends Component {
           <div className="col-4">
             <img className="logo" src={logo} alt="logo" />
           </div>
-          <i className="fa fa-bars fa-3x" aria-hidden="true" />
-          <nav className="col-8 navigation">
-            <ul>
-              <li>
+
+          <nav className="col-8">
+            <div className="navWide">
+              <div className="wideDiv">
                 <a href="#kancelaria">Kancelaria</a>
-              </li>
-              <li>
                 <a href="#zespol">Zespół</a>
-              </li>
-              <li>
                 <a href="#oferta">Oferta</a>
-              </li>
-              <li>
                 <a href="#kontakt">Kontakt</a>
-              </li>
-            </ul>
+              </div>
+            </div>
+
+            <div className="navNarrow">
+              <i
+                className="fa fa-bars fa-3x"
+                aria-hidden="true"
+                onClick={this.burgerToggle}
+              />
+              <div className="narrowLinks">
+                <a href="kancelaria" onClick={this.burgerToggle}>
+                  Kancelaria
+                </a>
+                <a href="zespol" onClick={this.burgerToggle}>
+                  Zespół
+                </a>
+                <a href="oferta" onClick={this.burgerToggle}>
+                  Oferta
+                </a>
+                <a href="kontakt" onClick={this.burgerToggle}>
+                  Kontakt
+                </a>
+              </div>
+            </div>
           </nav>
         </div>
       </div>

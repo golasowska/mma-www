@@ -60,9 +60,12 @@ section.container {
   .row {
     display: flex;
     align-items: center;
+    width: 100%;
     .logo {
+      max-width: 75%;
+      margin: 1em 0;
       @media (max-width: $gridBreakPoint) {
-        max-width: 60%;
+        max-width: 100%;
       }
     }
     i.fa.fa-bars {
@@ -71,149 +74,185 @@ section.container {
       display: inline-block;
       position: fixed;
       right: 15px;
-      @media (min-width: $gridBreakPoint) {
-        display: none;
-      }
     }
-    .navigation {
-      @media (max-width: $gridBreakPoint) {
+
+    nav {
+      overflow: hidden;
+      padding: 1em;
+      color: #000;
+      .navWide {
         display: none;
-      }
-      ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        text-transform: uppercase;
-        align-items: center;
-        li {
-          display: inline-block;
-          padding-right: 20px;
+        margin: 0 auto;
+
+        .wideDiv {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          text-transform: uppercase;
+          align-items: center;
+
           a {
             text-decoration: none;
-            color: #000000;
+            display: inline-block;
+            margin: 0 2em 0 0;
+            visited: #000;
             &:hover {
               border-top: 3px solid #000;
-              padding-top: 10px;
+              padding: 15px 0;
             }
           }
+        }
+      }
+
+      .navNarrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          padding-right: 20px;
+          cursor: pointer;
+          display: inline-block;
+          position: fixed;
+          right: 15px;
+          float: left;
+          cursor: pointer;
+        }
+        .narrowLinks {
+          display: none;
+          position: fixed;
+          left: 40%;
+          top: 150px;
+          text-decoration: none;
+          background: #fff;
+          flex-direction: column;
+          text-transform: uppercase;
+
+          a {
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            background: #fff;
+            color: #000;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            &:hover {
+              border-bottom: 3px solid #000;
+            }
+          }
+        }
+      }
+    }
+    @media (min-width: $gridBreakPoint) {
+      nav {
+        .navWide {
+          display: block;
+        }
+        .navNarrow {
+          display: none;
         }
       }
     }
   }
 }
 
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: block;
-  position: fixed;
-  top: 150px;
-  width: 100vh;
-  text-decoration: none;
-  background: #fff;
-}
-
 // ****** KANCELARIA ******** //
-.row {
-  .news {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    li {
-      font-size: 24px;
-      padding: 15px;
-      border-bottom: 1px solid #000;
-      &:hover {
-        border-bottom: 3px solid #000;
-      }
-    }
-  }
-}
-
-.kanc-desc {
-  text-align: justify;
-  h3 {
-    padding: 15px;
-  }
-  p {
-    padding-bottom: 10px;
-  }
-}
+// .row {
+//   .news {
+//     list-style: none;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     li {
+//       font-size: 24px;
+//       padding: 15px;
+//       // border-bottom: 1px solid #000;
+//       &:hover {
+//         border-bottom: 3px solid #000;
+//       }
+//     }
+//   }
+// }
+//
+// .kanc-desc {
+//   text-align: justify;
+//   h3 {
+//     padding: 15px;
+//   }
+//   p {
+//     padding-bottom: 10px;
+//   }
+// }
 
 // ****** ZESPOL ******** //
 
-#zespol {
-  .row {
-    .col-12 {
-      h3 {
-        padding: 15px 15px 15px 35px;
-      }
-    }
-  }
-  .row {
-    .employee {
-      text-align: center;
-      img {
-        width: 90%;
-      }
-      p {
-        width: 90%;
-        margin: 0 auto;
-        text-align: justify;
-        padding-top: 10px;
-      }
-      .name {
-        border-top: 1px solid #000;
-        margin-top: 30px;
-        padding-top: 20px;
-        font-size: 18px;
-        font-weight: bold;
-      }
-      .lawyer {
-        border-bottom: 1px solid #000;
-        margin-bottom: 30px;
-        padding-bottom: 20px;
-      }
-      ul {
-        padding-top: 10px;
-        width: 90%;
-        margin: 0 auto;
-        list-style: none;
-        text-align: justify;
-      }
-      i {
-        margin-bottom: 50px;
-      }
-    }
-  }
-}
-
-.row {
-  .team {
-    text-align: center;
-    img {
-      width: 90%;
-    }
-    p {
-      width: 90%;
-      margin: 20px auto;
-      text-align: justify;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #000;
-      font-size: 16px;
-    }
-  }
-}
-
-// ****** MAP ******** //
-
-#map {
-  height: 500px;
-  width: 100%;
-}
+// #zespol {
+//   .row {
+//     .col-12 {
+//       h3 {
+//         padding: 15px 15px 15px 35px;
+//       }
+//     }
+//   }
+//   .row {
+//     .employee {
+//       text-align: center;
+//       img {
+//         width: 90%;
+//       }
+//       p {
+//         width: 90%;
+//         margin: 0 auto;
+//         text-align: justify;
+//         padding-top: 10px;
+//       }
+//       .name {
+//         border-top: 1px solid #000;
+//         margin-top: 30px;
+//         padding-top: 20px;
+//         font-size: 18px;
+//         font-weight: bold;
+//       }
+//       .lawyer {
+//         border-bottom: 1px solid #000;
+//         margin-bottom: 30px;
+//         padding-bottom: 20px;
+//       }
+//       ul {
+//         padding-top: 10px;
+//         width: 90%;
+//         margin: 0 auto;
+//         list-style: none;
+//         text-align: justify;
+//       }
+//       i {
+//         margin-bottom: 50px;
+//       }
+//     }
+//   }
+// }
+//
+// .row {
+//   .team {
+//     text-align: center;
+//     img {
+//       width: 90%;
+//     }
+//     p {
+//       width: 90%;
+//       margin: 20px auto;
+//       text-align: justify;
+//       padding-top: 10px;
+//       padding-bottom: 10px;
+//       border-top: 1px solid #000;
+//       border-bottom: 1px solid #000;
+//       font-size: 16px;
+//     }
+//   }
+// }
+//
+// // ****** MAP ******** //
+//
+// #map {
+//   height: 500px;
+//   width: 100%;
+// }
