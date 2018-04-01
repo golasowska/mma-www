@@ -47,6 +47,7 @@ section.container {
 // ****** HEADER / NAVIGATION *******
 
 .header {
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
@@ -95,6 +96,7 @@ section.container {
             text-decoration: none;
             display: inline-block;
             margin: 0 2em 0 0;
+            color: #000;
             visited: #000;
             &:hover {
               border-top: 3px solid #000;
@@ -156,32 +158,45 @@ section.container {
 }
 
 // ****** KANCELARIA ******** //
-// .row {
-//   .news {
-//     list-style: none;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     li {
-//       font-size: 24px;
-//       padding: 15px;
-//       // border-bottom: 1px solid #000;
-//       &:hover {
-//         border-bottom: 3px solid #000;
-//       }
-//     }
-//   }
-// }
-//
-// .kanc-desc {
-//   text-align: justify;
-//   h3 {
-//     padding: 15px;
-//   }
-//   p {
-//     padding-bottom: 10px;
-//   }
-// }
+
+#kancelaria {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  .row {
+    display: flex;
+    justify-content: center;
+    .col-10 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      img {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+        &:hover {
+          opacity: 0;
+        }
+      }
+      .kanc-desc {
+        // position: absolute;
+        h3 {
+          padding: 15px;
+        }
+        p {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}
 
 // ****** ZESPOL ******** //
 

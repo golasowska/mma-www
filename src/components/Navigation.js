@@ -13,7 +13,7 @@ class Navigation extends Component {
   };
   render() {
     return (
-      <div className="container header">
+      <div className="header">
         <div className="row">
           <div className="col-4">
             <img className="logo" src={logo} alt="logo" />
