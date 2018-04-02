@@ -7,11 +7,11 @@ export default class Office extends Component {
     return (
       <section id="kancelaria">
         <div className="row">
-          <article className="col-10">
+          <article className="article">
             <div>
               <img src={mf} alt="team" />
             </div>
-            <div className="kanc-desc col-8">
+            <div className="kanc-desc">
               <h3>KANCELARIA</h3>
               <p>
                 Kancelarię Miechowska Markiewicz Adwokaci tworzy zespół

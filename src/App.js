@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Navigation from './components/Navigation';
 import Office from './components/Office';
+import Leaders from './components/Leaders';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="container">
         <Navigation />
         <Office />
+        <Leaders />
       </div>
     );
   }

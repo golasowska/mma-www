@@ -157,7 +157,7 @@ section.container {
   }
 }
 
-// ****** KANCELARIA ******** //
+// ****** OFFICE ******** //
 
 #kancelaria {
   margin-top: 1em;
@@ -166,10 +166,13 @@ section.container {
   .row {
     display: flex;
     justify-content: center;
-    .col-10 {
+    .article {
       position: relative;
       display: flex;
       justify-content: center;
+      @media (max-width: $gridBreakPoint) {
+        display: block;
+      }
 
       img {
         position: absolute;
@@ -184,9 +187,20 @@ section.container {
         &:hover {
           opacity: 0;
         }
+        @media (max-width: $gridBreakPoint) {
+          position: relative;
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
       .kanc-desc {
-        // position: absolute;
+        max-width: 600px;
+        height: 600px;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         h3 {
           padding: 15px;
         }
@@ -200,74 +214,77 @@ section.container {
 
 // ****** ZESPOL ******** //
 
-// #zespol {
-//   .row {
-//     .col-12 {
-//       h3 {
-//         padding: 15px 15px 15px 35px;
-//       }
-//     }
-//   }
-//   .row {
-//     .employee {
-//       text-align: center;
-//       img {
-//         width: 90%;
-//       }
-//       p {
-//         width: 90%;
-//         margin: 0 auto;
-//         text-align: justify;
-//         padding-top: 10px;
-//       }
-//       .name {
-//         border-top: 1px solid #000;
-//         margin-top: 30px;
-//         padding-top: 20px;
-//         font-size: 18px;
-//         font-weight: bold;
-//       }
-//       .lawyer {
-//         border-bottom: 1px solid #000;
-//         margin-bottom: 30px;
-//         padding-bottom: 20px;
-//       }
-//       ul {
-//         padding-top: 10px;
-//         width: 90%;
-//         margin: 0 auto;
-//         list-style: none;
-//         text-align: justify;
-//       }
-//       i {
-//         margin-bottom: 50px;
-//       }
-//     }
-//   }
-// }
-//
-// .row {
-//   .team {
-//     text-align: center;
-//     img {
-//       width: 90%;
-//     }
-//     p {
-//       width: 90%;
-//       margin: 20px auto;
-//       text-align: justify;
-//       padding-top: 10px;
-//       padding-bottom: 10px;
-//       border-top: 1px solid #000;
-//       border-bottom: 1px solid #000;
-//       font-size: 16px;
-//     }
-//   }
-// }
-//
-// // ****** MAP ******** //
-//
-// #map {
-//   height: 500px;
-//   width: 100%;
-// }
+#zespol {
+  .row {
+    .col-12 {
+      h3 {
+        padding: 15px 15px 15px 35px;
+        text-align: center;
+      }
+    }
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    .employee {
+      text-align: center;
+      img {
+        width: 90%;
+      }
+      p {
+        width: 90%;
+        margin: 0 auto;
+        text-align: justify;
+        padding-top: 10px;
+      }
+      .name {
+        border-top: 1px solid #000;
+        margin-top: 30px;
+        padding-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .lawyer {
+        border-bottom: 1px solid #000;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+      }
+      ul {
+        padding-top: 10px;
+        width: 90%;
+        margin: 0 auto;
+        list-style: none;
+        text-align: justify;
+      }
+      i {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+.row {
+  .team {
+    text-align: center;
+    img {
+      width: 90%;
+    }
+    p {
+      width: 90%;
+      margin: 20px auto;
+      text-align: justify;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      font-size: 16px;
+    }
+  }
+}
+
+// ****** MAP ******** //
+
+#map {
+  height: 500px;
+  width: 100%;
+}
