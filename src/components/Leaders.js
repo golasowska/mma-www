@@ -13,7 +13,7 @@ class Leaders extends Component {
     return (
       <section id="zespol">
         <div className="row">
-          <div className="col-12">
+          <div className="col-10">
             <h3>ZESPÓŁ</h3>
           </div>
         </div>

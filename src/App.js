@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Navigation from './components/Navigation';
 import Office from './components/Office';
 import Leaders from './components/Leaders';
+import Map from './components/Map';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Navigation />
         <Office />
         <Leaders />
+        <Map />
       </div>
     );
   }

@@ -4,8 +4,11 @@ export default class Leader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: 'none',
-      arrow: 'fa fa-arrow-down'
+      opacity: 0,
+      visibility: 'hidden',
+      transition: 'opacity 0.2s ease-in-out, visibility 0.2s ease-in-out',
+      arrow: 'fa fa-arrow-down',
+      maxHeight: 0
     };
   }
   renderSpec = () => {
@@ -14,15 +17,21 @@ export default class Leader extends Component {
     });
   };
   showMore = () => {
-    if (this.state.display === 'none') {
+    if (this.state.arrow === 'fa fa-arrow-down') {
       this.setState({
-        display: 'block',
-        arrow: 'fa fa-arrow-up'
+        visibility: 'visible',
+        opacity: 1,
+        arrow: 'fa fa-arrow-up',
+        transition: 'opacity 0.8s ease-in-out, visibility 0.8s ease-in-out',
+        maxHeight: '100%'
       });
     } else {
       this.setState({
-        display: 'none',
-        arrow: 'fa fa-arrow-down'
+        opacity: 0,
+        visibility: 'hidden',
+        arrow: 'fa fa-arrow-down',
+        transition: 'opacity 0.2s ease-in-out, visibility 0.2s ease-in-out',
+        maxHeight: 0
       });
     }
   };
@@ -41,7 +50,15 @@ export default class Leader extends Component {
         <img src={photo} alt="leader" />
         <p className="name">{name}</p>
         <p className="lawyer">{profession}</p>
-        <div className="desc-det" style={{ display: this.state.display }}>
+        <div
+          className="desc-det"
+          style={{
+            transition: this.state.transition,
+            opacity: this.state.opacity,
+            visibility: this.state.visibility,
+            maxHeight: this.state.maxHeight
+          }}
+        >
           <p>{description}</p>
           <ul>
             Specjalizacje:
