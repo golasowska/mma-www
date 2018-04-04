@@ -17,6 +17,7 @@ export default class Map extends Component {
     return (
       <div className="row map">
         <div className="col-10">
+          <h3>KONTAKT</h3>
           <div ref="map" id="map" />
         </div>
       </div>

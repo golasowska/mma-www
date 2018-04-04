@@ -46,7 +46,7 @@ export default class Leader extends Component {
     } = this.props.lead;
 
     return (
-      <article className="col-5 employee">
+      <article className="col-6 employee">
         <img src={photo} alt="leader" />
         <p className="name">{name}</p>
         <p className="lawyer">{profession}</p>

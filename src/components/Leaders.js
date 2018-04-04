@@ -13,8 +13,10 @@ class Leaders extends Component {
     return (
       <section id="zespol">
         <div className="row">
-          <div className="col-10">
-            <h3>ZESPÓŁ</h3>
+          <div className="row-display">
+            <div className="col-10">
+              <h3>ZESPÓŁ</h3>
+            </div>
           </div>
         </div>
         <div className="row">{this.displayEmployee()}</div>
